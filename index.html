@@ -51,6 +51,7 @@
 
         section {
             display: flex;
+            flex-wrap: wrap;
             gap: 30px;
             justify-content: center;
             margin-bottom: 2rem;
@@ -58,20 +59,24 @@
 
         article {
             text-align: center;
+            flex: 1 1 480px;
+            max-width: 580px;
+            min-width: 0;
         }
 
         article h2 {
             color: #2a6b7c;
             font-size: 1.5rem;
             letter-spacing: 2px;
-            width: 580px;
+            width: 100%;
             height: 72px;
             line-height: 72px;
             margin: 0 auto;
         }
 
         table {
-            width: 580px;
+            width: 100%;
+            table-layout: fixed;
             border-collapse: collapse;
             border: 2px solid #7ec8d8;
         }
@@ -82,7 +87,7 @@
             text-align: center;
             font-size: .85rem;
             height: 36px;
-            width: 60px;
+            width: 10.34%;
             color: #2a6b7c;
             background-color: #ffffff;
 
@@ -96,7 +101,7 @@
         }
 
         td.imagen {
-            width: 160px;
+            width: 27.59%;
             max-width: 160px;
             height: 288px;
             padding: 0;
@@ -106,16 +111,64 @@
         }
 
         td.imagen img {
-            width: 160px;
+            width: 100%;
             height: 288px;
             object-fit: cover;
             display: block;
         }
 
-
-
         td.vacio {
             background-color: #f5f0e8;
+        }
+
+        /* RESPONSIVE */
+        /* TABLET */
+        @media(max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                gap: 10px;
+            }
+
+            article {
+                flex: 1 1 100%;
+            }
+
+            article h2 {
+                height: 56px;
+                line-height: 56px;
+                font-size: 1.3rem;
+            }
+
+        }
+
+        /* MOVIL */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+
+            nav ul {
+                gap: 6px 12px;
+                font-size: .9rem;
+            }
+
+            main {
+                padding: .5rem;
+            }
+
+            td {
+                font-size: .75rem;
+                height: 34px;
+                width: auto;
+            }
+
+            /* se oculta imagen para q calendario ocupe todo el ancho*/
+            td.imagen {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -299,7 +352,7 @@
                                 <td><strong>S</strong></td>
                                 <td><strong>D</strong></td>
                                 <td rowspan="7" class="imagen">
-                                    <img src="imagenes/febrero.webp" alt="Imagen marzo">
+                                    <img src="imagenes/marzo.jpg" alt="Imagen marzo">
                                 </td>
 
                             </tr>
@@ -587,7 +640,6 @@
                                     <img src="imagenes/julio.jpg" alt="Imagen Julio">
                                 </td>
                             </tr>
-                            </tr>
                             <tr>
                                 <td class="vacio"></td>
                                 <td class="vacio"></td>
@@ -719,7 +771,6 @@
                 <article id="septiembre">
                     <h2>Septiembre</h2>
                     <table>
-
                         <tbody>
                             <tr>
                                 <td><strong>L</strong></td>
@@ -741,7 +792,7 @@
                                 <td>4</td>
                                 <td>5</td>
                                 <td>6</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>7</td>
@@ -751,7 +802,7 @@
                                 <td>11</td>
                                 <td>12</td>
                                 <td>13</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>14</td>
@@ -761,7 +812,7 @@
                                 <td>18</td>
                                 <td>19</td>
                                 <td>20</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>21</td>
@@ -771,13 +822,12 @@
                                 <td>25</td>
                                 <td>26</td>
                                 <td>27</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>28</td>
                                 <td>29</td>
                                 <td>30</td>
-                                <td class="vacio"></td>
                                 <td class="vacio"></td>
                                 <td class="vacio"></td>
                                 <td class="vacio"></td>
@@ -813,7 +863,7 @@
                                 <td>2</td>
                                 <td>3</td>
                                 <td>4</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -823,7 +873,7 @@
                                 <td>9</td>
                                 <td>10</td>
                                 <td>11</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>12</td>
@@ -833,7 +883,7 @@
                                 <td>16</td>
                                 <td>17</td>
                                 <td>18</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>19</td>
@@ -843,7 +893,7 @@
                                 <td>23</td>
                                 <td>24</td>
                                 <td>25</td>
-                                
+
                             </tr>
                             <tr>
                                 <td>26</td>
@@ -853,7 +903,7 @@
                                 <td>30</td>
                                 <td>31</td>
                                 <td class="vacio"></td>
-                                
+
                             </tr>
 
                         </tbody>
